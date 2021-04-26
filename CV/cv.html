@@ -1,25 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="cv.css">
     <title>Tal Bracha CV </title>
+    <script src="script.js"> </script>
 </head>
 <body>
     <div class = "grid-container">
-        <div class = "about"> About me
+        <div class = "about"> <p>
+            Hello Everybody ! <br> My name is Tal Bracha and in 26 years old ,<br>
+            Third year student at Ben-Gurion University of B.Sc. in Industrial Engineering and Management.<br>
+            Looking for a student position that will challenge me and give me vast experience.<br>
+            Key strengths: productive, autodidact, motivated, loyal, team player.<br>
+            <a href=https://www.linkedin.com/in/tal-bracha-852258208/>Add me at Linkdin,</a>
+            <a href=https://www.facebook.com/TalBracha2894/>Add me at FaceBook</a>
+        </p>
         </div>
         <div class = "picture"><a href="myPhoto.jpg">
         <img src="myPhoto.jpg" alt="myPhoto">
         </a></div>
-        <div class = "form"> form
-        <p> Call Me</p> </div>
-        <div class = "experience"> Experience </div>
-        <div class = "army">Army</div>
-        <div class = "programs"> Programs </div>
-        <div class = "language"> Language </div>
+        <div class = "form"> <h2> Recruiting here </h2>
+            <form name = "contact"> <p>
+                <label for="Name" >Enter your Name </label>
+                <input type = "text" id="Name"><br>
+                <label for="CompanyName" >Enter your Company name</label>
+                <input type = "text" id="CompanyName"><br>
+                <label for="PhoneNumber" >Enter your phone number</label>
+                <input type = "tel" id="PhoneNumber"><br>
+                <label for="Job" >Enter your Job description</label><br>
+                <textarea id="Job" cols="50" rows =14"> </textarea> <br>
+                <input type="submit">
+                <h5> Call Me</h5></p> </form>
+                </div>
+        <div class = "experience">  <h2> Experience </h2>
+            <p>
+            Production worker , Habonim Company - <br>
+		    A part of the manufacturing team that produces Industrial faucet components <br> <br>
+                <font size= 5px> Extra Activites</font> <br>
+                Brothers for Life - Achim La'Chaim <br>
+                I coordinate and manage the hydrotherapy treatment that the organization offers its veterans,
+                from scheduling the treatments and also coordinate the therapists. <br>
+                I enjoy volunteering in an 	organization that is like a family for me, and now I am giving back. <br>
+                <font  size="5"><a href="Tal Bracha CV new.pdf" download="download my CV">Download my CV</a></font>
+          </p>
+             <h1 id = "open">  <script> OpenToWork() </script> </h1>
+        </div>
+        <div class = "army"><h2>Military Service</h2>
+            <p> WARRIOR IN THE GOLANI BRIGADE <br>
+            3 years of service in the Golani brigade as Class Commander of 12 soldiers, Department Sergeant and Squad Sergeant Major. <br>
+            Rifleman  08 with outstanding soldier award, also got the "Tzuk Eitan" operation medal due to participation. <br>
+            </p>
+        </div>
+        <div class = "programs"> <h2>skills</h2>
+         <p>
+        CODING -	Java, C# , Rstudio <br><br>
+        DB -	SQL<br><br>
+             OTHER - Windows, Microsoft Office
+        </p></div>
+        <div class = "education"> <h2>education</h2> <p>
+          2018 – 2021 - Third year student at Ben Gurion University –
+            Bachelor of Science (B.Sc.) Industrial Engineering and Management, GPA 81. <br><br>
 
-
+        2006 – 2012 - Har Vagai High School
+                        Graduation with honor of full Matriculation. 10 points extension in Computer Science.
+        </p></div>
     </div>
+
+    <p id = "clock"></p>
+    <button onclick="document.getElementById('clock').innerHTML=Date()"> <font size="5">Check the time in Israel</font></button><br>
+
+    <button onclick="window.print()"> <font size="5">Print this page</font></button> <br>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Poppins:wght@200&display=swap" rel="stylesheet">
 </body>
 </html>
