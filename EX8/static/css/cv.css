@@ -113,29 +113,43 @@ font-size: 18px;
 font-family: 'Poppins', sans-serif;
 }
 
+.Pizza{
+    width: 150px;
+    hight: 150px;
+}
+
 @media only screen and (max-width: 1000px) {
     /* For mobile phones: */
     [class="about"] {
         width: 100%;
     }
- [class="picture"] {
+
+    [class="picture"] {
         width: 100%;
         height: 50%;
     }
-      [class="experience"] {
+
+    [class="experience"] {
         width: 100%;
     }
+
     [class="education"] {
         width: 50%;
-    }   [class="programs"] {
+    }
+
+    [class="programs"] {
         width: 50%;
-  }
-     [class="form"] {
+    }
+
+    [class="form"] {
         width: 100%;
         height: 20%;
     }
-   [class="army"] {
+
+    [class="army"] {
         width: 100%;
-  }
+    }
+}
+
 
 

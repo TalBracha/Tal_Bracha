@@ -1,0 +1,11 @@
+<title>Food</title>
+{% extends 'assignment8.html' %}
+{% block favorite %}
+<h3>{{ name }}'s favorite food is:</h3>
+<ol>
+    {% for food in foods %}
+    <li> {{ food }} </li>
+    {% endfor %}
+</ol>
+    <img class= "Pizza" src="{{url_for( 'static',filename='../static/img/Pizza.jpg' )}}" alt="Pizza">
+{% endblock %}

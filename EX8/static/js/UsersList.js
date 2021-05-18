@@ -1,4 +1,3 @@
-
 fetch('https://reqres.in/api/users?page=2').then
 (list => list.json()).then(listUsers => createList(listUsers.data))
 

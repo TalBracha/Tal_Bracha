@@ -2,9 +2,11 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/cv.css') }}">
     <title>Tal Bracha CV </title>
-    <script src="script.js"> </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='../static/js/UsersList.js') }}"></script>
+{#    <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>#}
 </head>
 <body>
     <div class = "grid-container">
@@ -18,8 +20,8 @@
             <a href=Assignment7.html> UserList - Ex7 </a>
         </p>
         </div>
-        <div class = "picture"><a href="myPhoto.jpg">
-        <img src="myPhoto.jpg" alt="myPhoto">
+        <div class = "picture"><a href="../static/img/myPhoto.jpg">
+       <img src="{{ url_for('static', filename='../static/img/myPhoto.jpg') }}" alt="myPhoto">
         </a></div>
         <div class = "form"> <h2> Recruiting here </h2>
             <form name = "contact"> <p>
@@ -43,7 +45,7 @@
                 I coordinate and manage the hydrotherapy treatment that the organization offers its veterans,
                 from scheduling the treatments and also coordinate the therapists. <br>
                 I enjoy volunteering in an 	organization that is like a family for me, and now I am giving back. <br>
-                <font  size="5"><a href="Tal Bracha CV new.pdf" download="download my CV">Download my CV</a></font>
+                <font  size="5"><a href="../static/img/Tal Bracha CV new.pdf" download="download my CV">Download my CV</a></font>
           </p>
              <h1 id = "open">  <script> OpenToWork() </script> </h1>
         </div>
