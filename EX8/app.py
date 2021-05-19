@@ -1,8 +1,5 @@
-
 from flask import Flask, render_template, url_for
-
 app = Flask(__name__)
-
 
 @app.route('/')
 def hello_world():
@@ -11,7 +8,7 @@ def hello_world():
 @app.route('/assignment8')
 def assignment8():
     name = 'Tal'
-    hobby = 'to play soccer', 'climb', 'go to a party with friends'
+    hobby = ['to play soccer', 'climb', 'go to a party with friends']
     return render_template('assignment8.html',
                            name=name,
                            hobbies=hobby)
@@ -19,9 +16,9 @@ def assignment8():
 @app.route('/food')
 def food():
     name = 'Tal'
-    food = 'Pizza', 'Hummos', 'Hamburger'
+    food = ['Pizza', 'Hummos', 'Hamburger']
     return render_template('food.html',
-                            name=name,
+                           name=name,
                            foods=food)
 
 
