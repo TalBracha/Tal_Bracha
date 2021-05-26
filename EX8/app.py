@@ -40,7 +40,6 @@ def contactlist():
 @app.route('/assignment9' , methods = ['GET','DELETE','POST','PUY'])
 def ex_9func():
     current_method = request.method
-    session['login'] = False
     if current_method == 'GET':
             if 'userName' in request.args:
                 userName = request.args['userName']
