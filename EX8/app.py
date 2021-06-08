@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for , request , redirect , session
+from flask import Flask, render_template, url_for , request , redirect , session ,blueprints
+
 
 app = Flask(__name__)
 app.secret_key = '123'
@@ -17,9 +18,12 @@ users =   [{"userName":"talosh","firstName": "Tal","lastName":"Bracha", "email":
 def hello_world():
     return render_template('cv.html')
 
+from assignment10.assignment10 import assignment10
+app.register_blueprint(assignment10)
+
 @app.route('/assignment8')
 def assignment8():
-    name = 'Tal'
+    name = ''
     hobby = ['to play soccer', 'climb', 'go to a party with friends']
     return render_template('assignment8.html',
                            name=name,

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex10</title>
+</head>
+<body>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+           <h3>{{ message }}</h3>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<h1>Insert Form:</h1>
+<h2>enter user details for insert</h2>
+<form name="insert" method="POST" action="/insertUser">
+    <input name="userName" type="text" placeholder="enter your user name">
+    <input name="firstName" type="text" placeholder="enter your first name">
+    <input name="lastName" type="text" placeholder="enter your last name">
+    <input name="email" type="email" placeholder="enter your email">
+    <input type="submit">
+</form>
+
+<hr>
+<h1>Update Form:</h1>
+<h2>enter user Id and then the details you want to update </h2>
+<form name="update" method="POST" action="/updateUser">
+    <input name="id" type="text" placeholder="enter user Id ">
+    <input name="userName" type="text" placeholder="enter your user name">
+    <input name="firstName" type="text" placeholder="enter your first name">
+    <input name="lastName" type="text" placeholder="enter your last name">
+    <input name="email" type="email" placeholder="enter your email">
+    <input type="submit">
+</form>
+
+<hr>
+<h1>Delete Form:</h1>
+<h2>enter user Id for delete</h2>
+<form name="delete" method="POST" action="/deleteUser">
+    <input name="id" type="text" placeholder="enter user Id">
+    <input type="submit">
+</form>
+
+<hr>
+<h3>List of Users:</h3>
+<ul>
+    {% for user in users %}
+        <li>
+            ID: {{ user.id }} , userName: {{ user.userName }}, fullName: {{ user.firstName }} {{ user.lastName }} , Email: {{ user.email }}
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
