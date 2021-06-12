@@ -1,5 +1,5 @@
-from flask import Flask, render_template, url_for , request , redirect , session ,blueprints
-
+from flask import Flask, render_template, url_for , request , redirect , session ,blueprints ,jsonify
+import  mysql, mysql.connector
 
 app = Flask(__name__)
 app.secret_key = '123'
@@ -14,10 +14,56 @@ users =   [{"userName":"talosh","firstName": "Tal","lastName":"Bracha", "email":
             {"userName":"yossosh","firstName": "Yossi", "lastName": "Bracha", "email": "yossibracha123@gmai.com"},
             {"userName":"lucasosh","firstName": "Lucas", "lastName": "Podolsky", "email": "lucaspodolsky@gmai.com"}]
 
+def interact_db(query, query_type: str):
+    return_value = False
+    connection = mysql.connector.connect(host='localhost',
+                                         user='root',
+                                         password='d6sktfTh',
+                                         database='assignment10_schema')
+    cursor = connection.cursor(named_tuple=True)
+    cursor.execute(query)
+
+    if query_type == 'commit':
+        connection.commit()
+        return_value = True
+    if query_type == 'fetch':
+        query_result = cursor.fetchall()
+        return_value = query_result
+
+    connection.close()
+    cursor.close()
+    return return_value
+
 @app.route('/')
 def hello_world():
     return render_template('cv.html')
 
+# -----EX11--------#
+@app.route('/assignment11/users')
+def assignment11():
+    current_method = request.method
+    if current_method == 'GET':
+        query = "SELECT * FROM assignment10_schema.users;"
+        query_result = interact_db(query=query, query_type='fetch')
+        response = {}
+        if len(query_result) != 0:
+            response = query_result
+        response = jsonify(users=response)
+        return response
+    else:
+        return jsonify(users)
+
+@app.route('/assignment11/users/selected/id/', defaults={'SOME_USER_ID':3})
+@app.route('/assignment11/users/selected/id/<int:SOME_USER_ID>')
+def get_user(SOME_USER_ID=None):
+    if SOME_USER_ID:
+        query = "SELECT * FROM assignment10_schema.users WHERE id='%s'" % SOME_USER_ID
+        query_result = interact_db(query, query_type='fetch')
+        if len(query_result) != 0:
+            return jsonify(users=query_result)
+    return jsonify({'success': False,
+                    'error': 'this Id is not appear in DB'
+                    })
 from assignment10.assignment10 import assignment10
 app.register_blueprint(assignment10)
 

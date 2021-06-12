@@ -1,9 +1,7 @@
 from flask import Flask, render_template, url_for, session, request, redirect, Blueprint , flash
-import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = "123"
-
 
 assignment10 = Blueprint(
     'assignment10',
